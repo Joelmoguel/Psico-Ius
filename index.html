@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Laboratorio de investigación de juicios orales. Asesoría psicojurídica integrada y formación en lenguaje operativo para profesionales del derecho y la psicología.">
+    <meta name="keywords" content="psicología forense, derecho, juicios orales, resiliencia procesal, asesoría psicojurídica">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://psicoius.mx/">
+    <meta property="og:title" content="PSiCO-IUS | Neurojusticia y Resiliencia Procesal">
+    <meta property="og:description" content="Laboratorio de investigación de juicios orales. Asesoría psicojurídica integrada y formación en lenguaje operativo para profesionales del derecho y la psicología.">
+    <meta property="og:image" content="https://psicoius.mx/og-image.jpg">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://psicoius.mx/">
+    <meta property="twitter:title" content="PSiCO-IUS | Neurojusticia y Resiliencia Procesal">
+    <meta property="twitter:description" content="Laboratorio de investigación de juicios orales. Asesoría psicojurídica integrada y formación en lenguaje operativo para profesionales del derecho y la psicología.">
+    <meta property="twitter:image" content="https://psicoius.mx/og-image.jpg">
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://psicoius.mx/">
+    
+    <title>PSiCO-IUS | Laboratorio de Investigación de Juicios Orales</title>
+    
+    <!--
+    ═══════════════════════════════════════════════════════════════════════════════
+    INSTRUCCIONES DE CONFIGURACIÓN
+    ═══════════════════════════════════════════════════════════════════════════════
+    
+    1. CONFIGURAR FORMSPREE:
+       - Regístrate en https://formspree.io (gratis para hasta 50 envíos/mes)
+       - Crea un nuevo formulario y copia tu endpoint único
+       - Reemplaza "TU_ENDPOINT" en la línea del formulario (buscar: action="https://formspree.io/f/TU_ENDPOINT")
+       - Configura la redirección a "gracias.html" en el panel de Formspree
+    
+    2. PUBLICAR EN HOSTING GRATUITO:
+       
+       OPCIÓN A - GitHub Pages:
+       - Sube ambos archivos (index.html y gracias.html) a un repositorio de GitHub
+       - Ve a Settings > Pages
+       - Selecciona la rama "main" y carpeta "/ (root)"
+       - Tu sitio estará en: https://[tu-usuario].github.io/[nombre-repo]
+       
+       OPCIÓN B - Netlify:
+       - Arrastra la carpeta con los archivos a https://app.netlify.com/drop
+       - Tu sitio estará disponible en minutos con URL personalizable
+       
+    3. COMPARTIR EN REDES SOCIALES:
+       ⚠️ IMPORTANTE: Esta página NO se puede insertar directamente en Facebook/Instagram
+       - Debes publicarla en hosting externo primero
+       - Luego comparte el enlace público en tus posts
+       - Facebook generará automáticamente una preview usando los meta tags Open Graph
+    
+    4. PERSONALIZACIÓN:
+       - El endpoint de Formspree debe configurarse antes de usar el formulario
+       - El número de WhatsApp ya está configurado: 56 31 03 75 75
+       - Email de contacto: moguelcnsef@gmail.com
+    
+    ═══════════════════════════════════════════════════════════════════════════════
+    -->
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════════
+           RESET Y VARIABLES GLOBALES
+           ═══════════════════════════════════════════════════════════════════ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --azul-profundo: #0b2447;
+            --azul-medio: #1e3a8a;
+            --dorado-sutil: #d4af37;
+            --gris-claro: #f8fafc;
+            --verde-confianza: #10b981;
+            --blanco: #ffffff;
+            --texto-oscuro: #1f2937;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--texto-oscuro);
+            overflow-x: hidden;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           HEADER
+           ═══════════════════════════════════════════════════════════════════ */
+        header {
+            background: var(--azul-profundo);
+            padding: 1.5rem 1rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: var(--blanco);
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--dorado-sutil);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--azul-profundo);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           HERO SECTION
+           ═══════════════════════════════════════════════════════════════════ */
+        .hero {
+            background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+            padding: 5rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '01010011 01001001 01010011 01010100 01000101 01001101 01000001';
+            position: absolute;
+            top: 20%;
+            left: 0;
+            width: 100%;
+            font-size: 0.8rem;
+            opacity: 0.05;
+            letter-spacing: 3px;
+            word-wrap: break-word;
+            pointer-events: none;
+        }
+        
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            font-weight: 700;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           SERVICIOS
+           ═══════════════════════════════════════════════════════════════════ */
+        .servicios {
+            padding: 5rem 1rem;
+            background: var(--gris-claro);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: var(--azul-profundo);
+        }
+        
+        .servicios-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+        
+        .servicio-card {
+            background: var(--blanco);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .servicio-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .servicio-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .servicio-card h3 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+            color: var(--azul-profundo);
+        }
+        
+        .servicio-subtitle {
+            color: var(--dorado-sutil);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            font-size: 1.1rem;
+        }
+        
+        .servicio-list {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+        
+        .servicio-list li {
+            padding: 0.75rem 0;
+            padding-left: 2rem;
+            position: relative;
+            line-height: 1.6;
+        }
+        
+        .servicio-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--verde-confianza);
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: var(--azul-profundo);
+            color: var(--blanco);
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.3s ease, transform 0.3s ease;
+        }
+        
+        .cta-button:hover {
+            background: var(--azul-medio);
+            transform: translateY(-2px);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           METODOLOGÍA
+           ═══════════════════════════════════════════════════════════════════ */
+        .metodologia {
+            padding: 5rem 1rem;
+            background: var(--blanco);
+        }
+        
+        .metodologia-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .metodologia-item {
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .metodologia-number {
+            width: 60px;
+            height: 60px;
+            background: var(--dorado-sutil);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--azul-profundo);
+        }
+        
+        .metodologia-item h4 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--azul-profundo);
+        }
+        
+        .metodologia-item p {
+            line-height: 1.8;
+            color: #4b5563;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           FORMULARIO DE CONTACTO
+           ═══════════════════════════════════════════════════════════════════ */
+        .contacto {
+            padding: 5rem 1rem;
+            background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-medio) 100%);
+            color: var(--blanco);
+        }
+        
+        .contacto-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .contacto-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .contacto-subtitle {
+            font-size: 1.1rem;
+            opacity: 0.9;
+            max-width: 700px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .form-container {
+            max-width: 700px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 3rem;
+            border-radius: 12px;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.95);
+            color: var(--texto-oscuro);
+            font-family: inherit;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--dorado-sutil);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .radio-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .radio-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .radio-options {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .radio-option:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .radio-option input[type="radio"] {
+            width: auto;
+            margin-right: 0.75rem;
+            cursor: pointer;
+        }
+        
+        .disclaimer {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--verde-confianza);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+        }
+        
+        .disclaimer strong {
+            color: var(--verde-confianza);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .submit-button {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--dorado-sutil);
+            color: var(--azul-profundo);
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        
+        .submit-button:hover {
+            background: #e5c555;
+            transform: translateY(-2px);
+        }
+        
+        .submit-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .contacto-directo {
+            text-align: center;
+            margin-top: 2rem;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .contacto-directo a {
+            color: var(--dorado-sutil);
+            text-decoration: none;
+            font-weight: 600;
+        }
+        
+        .contacto-directo a:hover {
+            text-decoration: underline;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           FOOTER
+           ═══════════════════════════════════════════════════════════════════ */
+        footer {
+            background: var(--azul-profundo);
+            color: var(--blanco);
+            padding: 3rem 1rem 1.5rem;
+        }
+        
+        .footer-logo {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-logo .logo-icon {
+            width: 60px;
+            height: 60px;
+            font-size: 2rem;
+            margin: 0 auto 1rem;
+        }
+        
+        .footer-logo .logo-text {
+            font-size: 2rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto 2rem;
+        }
+        
+        .footer-column h3 {
+            color: var(--dorado-sutil);
+            margin-bottom: 1rem;
+            font-size: 1.2rem;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            padding: 0.5rem 0;
+        }
+        
+        .footer-column a {
+            color: var(--blanco);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column a:hover {
+            color: var(--dorado-sutil);
+        }
+        
+        .etica-list {
+            list-style: none;
+        }
+        
+        .etica-list li {
+            padding: 0.5rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .etica-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--verde-confianza);
+            font-weight: bold;
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .copyright {
+            margin-bottom: 1rem;
+            opacity: 0.8;
+        }
+        
+        .nota-tecnica {
+            font-size: 0.9rem;
+            opacity: 0.7;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           BOTÓN FLOTANTE DE WHATSAPP
+           ═══════════════════════════════════════════════════════════════════ */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #25D366;
+            color: var(--blanco);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            text-decoration: none;
+            z-index: 1000;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           RESPONSIVE DESIGN
+           ═══════════════════════════════════════════════════════════════════ */
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
+            
+            .servicios-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .metodologia-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .radio-options {
+                flex-direction: row;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+            
+            .metodologia-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           UTILIDADES Y ACCESIBILIDAD
+           ═══════════════════════════════════════════════════════════════════ */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        *:focus-visible {
+            outline: 2px solid var(--dorado-sutil);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HEADER
+         ═══════════════════════════════════════════════════════════════════ -->
+    <header>
+        <div class="header-content">
+            <a href="#" class="logo" aria-label="PSiCO-IUS - Página principal">
+                <div class="logo-icon" aria-hidden="true">Ψ</div>
+                <span class="logo-text">PSiCO-IUS</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         HERO SECTION
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Donde la observación sistemática encuentra la acción ética</h1>
+            <p class="hero-subtitle">
+                Laboratorio mexicano de investigación de juicios orales. Fortalecemos la resiliencia procesal 
+                y construimos lenguaje psicojurídico operativo para profesionales comprometidos con una justicia rigurosa.
+            </p>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         SERVICIOS
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="servicios" id="servicios">
+        <div class="container">
+            <h2 class="section-title">Nuestros Servicios</h2>
+            <div class="servicios-grid">
+                <!-- Tarjeta 1: Asesoría Psicojurídica -->
+                <article class="servicio-card">
+                    <span class="servicio-icon" aria-hidden="true">🧠🛡️</span>
+                    <h3>Asesoría Psicojurídica Integrada</h3>
+                    <p class="servicio-subtitle">Para víctimas y profesionales</p>
+                    <ul class="servicio-list">
+                        <li>Preparación testimonial estable sin revictimización</li>
+                        <li>Optimización del procesamiento emocional de memorias adversas</li>
+                        <li>Acompañamiento en audiencias clave</li>
+                        <li>Plan de autocuidado procesal personalizado</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Explorar opciones</a>
+                </article>
+
+                <!-- Tarjeta 2: Formación Profesional -->
+                <article class="servicio-card">
+                    <span class="servicio-icon" aria-hidden="true">👁️⚖️</span>
+                    <h3>Formación Profesional</h3>
+                    <p class="servicio-subtitle">Programa mensual de sábados</p>
+                    <ul class="servicio-list">
+                        <li>Lenguaje psicojurídico operativo (diccionario digital incluido)</li>
+                        <li>Imputabilidad simbólica y FAAA aplicado</li>
+                        <li>Ética como estrategia litigable (teoría de juegos)</li>
+                        <li>Análisis de puntos débiles en audiencias reales</li>
+                    </ul>
+                    <a href="#contacto" class="cta-button">Solicitar programa completo</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         METODOLOGÍA
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="metodologia">
+        <div class="container">
+            <h2 class="section-title">Nuestra Metodología</h2>
+            <div class="metodologia-grid">
+                <div class="metodologia-item">
+                    <div class="metodologia-number" aria-hidden="true">1</div>
+                    <h4>Lenguaje Operativo</h4>
+                    <p>Definiciones claras que eliminan ambigüedad entre psicología y derecho</p>
+                </div>
+                <div class="metodologia-item">
+                    <div class="metodologia-number" aria-hidden="true">2</div>
+                    <h4>Observación Sistemática</h4>
+                    <p>Protocolos replicables para analizar comportamiento de actores jurídicos</p>
+                </div>
+                <div class="metodologia-item">
+                    <div class="metodologia-number" aria-hidden="true">3</div>
+                    <h4>Resiliencia Procesal</h4>
+                    <p>Fortalecimiento neurocognitivo para reducir agotamiento que causa deserción del 68% de casos</p>
+                </div>
+                <div class="metodologia-item">
+                    <div class="metodologia-number" aria-hidden="true">4</div>
+                    <h4>Ética Estratégica</h4>
+                    <p>Convertir irregularidades en consecuencias probatorias mediante teoría de juegos</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         FORMULARIO DE CONTACTO
+         ═══════════════════════════════════════════════════════════════════ -->
+    <section class="contacto" id="contacto">
+        <div class="container">
+            <div class="contacto-header">
+                <h2>Inicia una Conversación Exploratoria</h2>
+                <p class="contacto-subtitle">
+                    Sin compromiso comercial. Solo información basada en evidencia para evaluar 
+                    si nuestros servicios se alinean con tus necesidades.
+                </p>
+            </div>
+            
+            <div class="form-container">
+                <form action="https://formspree.io/f/TU_ENDPOINT" method="POST" id="contactForm">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo *</label>
+                        <input type="text" id="nombre" name="nombre" required aria-required="true">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Correo electrónico *</label>
+                        <input type="email" id="email" name="email" required aria-required="true">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="whatsapp">WhatsApp (recomendado)</label>
+                        <input type="tel" id="whatsapp" name="whatsapp" placeholder="Ej. 56 31 03 75 75">
+                    </div>
+                    
+                    <div class="radio-group">
+                        <label>¿En qué te podemos apoyar? *</label>
+                        <div class="radio-options">
+                            <label class="radio-option">
+                                <input type="radio" name="servicio" value="Asesoría psicojurídica" required aria-required="true">
+                                <span>Asesoría psicojurídica</span>
+                            </label>
+                            <label class="radio-option">
+                                <input type="radio" name="servicio" value="Formación profesional" required aria-required="true">
+                                <span>Formación profesional</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="mensaje">Mensaje breve</label>
+                        <textarea id="mensaje" name="mensaje" placeholder="Ej. 'Soy abogado y mi cliente muestra signos de agotamiento procesal...' o 'Busco formación en análisis de juicios orales...'"></textarea>
+                    </div>
+                    
+                    <div class="disclaimer">
+                        <strong>Confidencialidad:</strong>
+                        Tu información se maneja con estricta confidencialidad según estándares APA y LGPD. 
+                        No compartimos datos con terceros.
+                        <br><br>
+                        <strong>Nota ética:</strong>
+                        No prometemos resultados garantizados. Ofrecemos herramientas basadas en evidencia 
+                        para fortalecer tu proceso o práctica profesional.
+                    </div>
+                    
+                    <button type="submit" class="submit-button" id="submitBtn">
+                        Enviar solicitud exploratoria
+                    </button>
+                </form>
+                
+                <p class="contacto-directo">
+                    También puedes contactarnos directamente:<br>
+                    📧 <a href="mailto:moguelcnsef@gmail.com">moguelcnsef@gmail.com</a> | 
+                    📱 WhatsApp <a href="https://wa.me/525631037575">56 31 03 75 75</a>
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         FOOTER
+         ═══════════════════════════════════════════════════════════════════ -->
+    <footer>
+        <div class="container">
+            <div class="footer-logo">
+                <div class="logo-icon" aria-hidden="true">Ψ</div>
+                <div class="logo-text">PSiCO-IUS</div>
+            </div>
+            
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>PSiCO-IUS</h3>
+                    <ul>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                        <li><a href="#servicios">Asesoría Psicojurídica</a></li>
+                        <li><a href="#servicios">Formación Profesional</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contacto</h3>
+                    <ul>
+                        <li><a href="mailto:moguelcnsef@gmail.com">moguelcnsef@gmail.com</a></li>
+                        <li><a href="https://wa.me/525631037575">WhatsApp: 56 31 03 75 75</a></li>
+                        <li>Psic. Joel Moguel Mondragón</li>
+                        <li>Dr. Víctor Moreno Sánchez</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ética Profesional</h3>
+                    <ul class="etica-list">
+                        <li>Sin diagnósticos a distancia</li>
+                        <li>Sin promesas de resultados</li>
+                        <li>Confidencialidad garantizada</li>
+                        <li>Enfoque educativo no comercial</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p class="copyright">
+                    PSiCO-IUS © 2026 — Laboratorio de investigación de juicios orales. Todos los derechos reservados.
+                </p>
+                <p class="nota-tecnica">
+                    Esta página utiliza Formspree para notificaciones por email. Los pagos se gestionan mediante 
+                    conversación directa por WhatsApp para garantizar seguridad y personalización.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         BOTÓN FLOTANTE DE WHATSAPP
+         ═══════════════════════════════════════════════════════════════════ -->
+    <a href="https://wa.me/525631037575?text=Hola,%20me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20PSiCO-IUS" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       aria-label="Contactar por WhatsApp">
+        <span aria-hidden="true">💬</span>
+    </a>
+
+    <!-- ═══════════════════════════════════════════════════════════════════════
+         JAVASCRIPT
+         ═══════════════════════════════════════════════════════════════════ -->
+    <script>
+        // Smooth scroll para anclas
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href !== '#' && href !== '') {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                }
+            });
+        });
+
+        // Loader visual en botón de envío
+        const form = document.getElementById('contactForm');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        if (form && submitBtn) {
+            form.addEventListener('submit', function(e) {
+                submitBtn.disabled = true;
+                submitBtn.textContent = 'Enviando...';
+                
+                // Si hay error, rehabilitar el botón después de 3 segundos
+                setTimeout(() => {
+                    if (submitBtn.disabled) {
+                        submitBtn.disabled = false;
+                        submitBtn.textContent = 'Enviar solicitud exploratoria';
+                    }
+                }, 3000);
+            });
+        }
+
+        // Tracking opcional de WhatsApp (solo si gtag está disponible)
+        const whatsappLinks = document.querySelectorAll('a[href*="wa.me"]');
+        whatsappLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'click', {
+                        'event_category': 'WhatsApp',
+                        'event_label': 'Contacto directo'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

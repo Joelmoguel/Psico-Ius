@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Gracias por tu contacto | PSiCO-IUS</title>
+    
+    <style>
+        /* ═══════════════════════════════════════════════════════════════════════
+           RESET Y VARIABLES GLOBALES
+           ═══════════════════════════════════════════════════════════════════ */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --azul-profundo: #0b2447;
+            --azul-medio: #1e3a8a;
+            --dorado-sutil: #d4af37;
+            --gris-claro: #f8fafc;
+            --verde-confianza: #10b981;
+            --blanco: #ffffff;
+            --texto-oscuro: #1f2937;
+        }
+        
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', sans-serif;
+            line-height: 1.6;
+            color: var(--blanco);
+            background: linear-gradient(135deg, var(--azul-profundo) 0%, var(--azul-medio) 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           CONTENEDOR PRINCIPAL
+           ═══════════════════════════════════════════════════════════════════ */
+        .container {
+            max-width: 700px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           ÍCONO DE ÉXITO
+           ═══════════════════════════════════════════════════════════════════ */
+        .checkmark {
+            width: 80px;
+            height: 80px;
+            background: var(--verde-confianza);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 2rem;
+            font-size: 3rem;
+            animation: scaleIn 0.5s ease-out;
+        }
+        
+        @keyframes scaleIn {
+            0% {
+                transform: scale(0);
+                opacity: 0;
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           LOGO
+           ═══════════════════════════════════════════════════════════════════ */
+        .logo {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            margin-bottom: 2rem;
+        }
+        
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--dorado-sutil);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--azul-profundo);
+        }
+        
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           CONTENIDO
+           ═══════════════════════════════════════════════════════════════════ */
+        h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            line-height: 1.3;
+        }
+        
+        .mensaje-principal {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            opacity: 0.95;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           SECCIÓN "QUÉ ESPERAR"
+           ═══════════════════════════════════════════════════════════════════ */
+        .que-esperar {
+            background: rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+        
+        .que-esperar h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: var(--dorado-sutil);
+            text-align: center;
+        }
+        
+        .que-esperar ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .que-esperar li {
+            padding: 1rem 0;
+            padding-left: 2.5rem;
+            position: relative;
+            line-height: 1.7;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .que-esperar li:last-child {
+            border-bottom: none;
+        }
+        
+        .que-esperar li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--verde-confianza);
+            font-weight: bold;
+            font-size: 1.3rem;
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           BOTONES
+           ═══════════════════════════════════════════════════════════════════ */
+        .button-group {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: transform 0.3s ease, background 0.3s ease;
+            text-align: center;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        .btn-primary {
+            background: var(--dorado-sutil);
+            color: var(--azul-profundo);
+        }
+        
+        .btn-primary:hover {
+            background: #e5c555;
+        }
+        
+        .btn-secondary {
+            background: rgba(255, 255, 255, 0.15);
+            color: var(--blanco);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.25);
+            border-color: rgba(255, 255, 255, 0.5);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           NOTA ÉTICA
+           ═══════════════════════════════════════════════════════════════════ */
+        .nota-etica {
+            background: rgba(16, 185, 129, 0.1);
+            border-left: 4px solid var(--verde-confianza);
+            padding: 1.5rem;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            text-align: left;
+        }
+        
+        .nota-etica strong {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--verde-confianza);
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           RESPONSIVE
+           ═══════════════════════════════════════════════════════════════════ */
+        @media (min-width: 768px) {
+            .container {
+                padding: 4rem 3rem;
+            }
+            
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .button-group {
+                flex-direction: row;
+                justify-content: center;
+            }
+            
+            .btn {
+                flex: 0 0 auto;
+                min-width: 250px;
+            }
+        }
+        
+        /* ═══════════════════════════════════════════════════════════════════════
+           ACCESIBILIDAD
+           ═══════════════════════════════════════════════════════════════════ */
+        *:focus-visible {
+            outline: 2px solid var(--dorado-sutil);
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+            <div class="logo-icon" aria-hidden="true">Ψ</div>
+            <span class="logo-text">PSiCO-IUS</span>
+        </div>
+        
+        <!-- Ícono de éxito -->
+        <div class="checkmark" aria-hidden="true">
+            ✓
+        </div>
+        
+        <!-- Mensaje principal -->
+        <h1>Gracias por iniciar esta conversación</h1>
+        <p class="mensaje-principal">
+            Hemos recibido tu solicitud exploratoria. En las próximas <strong>24–48 horas</strong>, 
+            Joel Moguel o Víctor Moreno se pondrán en contacto contigo vía WhatsApp o correo.
+        </p>
+        
+        <!-- Sección "¿Qué puedes esperar?" -->
+        <div class="que-esperar">
+            <h2>¿Qué puedes esperar?</h2>
+            <ul>
+                <li>Conversación exploratoria sin compromiso comercial</li>
+                <li>Evaluación de necesidades específicas</li>
+                <li>Información transparente sobre metodología y límites éticos</li>
+            </ul>
+        </div>
+        
+        <!-- Botones de acción -->
+        <div class="button-group">
+            <a href="https://wa.me/525631037575?text=Hola,%20acabo%20de%20enviar%20una%20solicitud%20exploratoria%20y%20quisiera%20hablar%20directamente" 
+               class="btn btn-primary" 
+               target="_blank" 
+               rel="noopener noreferrer">
+                📱 Contactar directamente por WhatsApp
+            </a>
+            <a href="index.html" class="btn btn-secondary">
+                ← Volver al inicio
+            </a>
+        </div>
+        
+        <!-- Nota ética -->
+        <div class="nota-etica">
+            <strong>Compromiso ético:</strong>
+            Confidencialidad garantizada según estándares APA y LGPD. Sin diagnósticos a distancia. 
+            Sin promesas de resultados garantizados.
+        </div>
+    </div>
+
+    <script>
+        // Tracking opcional de llegada a página de agradecimiento
+        if (typeof gtag !== 'undefined') {
+            gtag('event', 'conversion', {
+                'event_category': 'Formulario',
+                'event_label': 'Formulario enviado exitosamente'
+            });
+        }
+    </script>
+</body>
+</html>
