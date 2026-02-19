@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PSiCO-IUS | Neurojusticia y Resiliencia Procesal</title>
+  <meta name="description" content="Laboratorio de investigación de juicios orales. Asesoría psicojurídica integrada y formación en lenguaje operativo para profesionales del derecho y la psicología.">
+  <style>
+    :root {
+      --azul-profundo: #0b2447;
+      --dorado-sutil: #d4af37;
+      --gris-claro: #f8fafc;
+      --gris-medio: #94a3b8;
+      --verde-confianza: #10b981;
+      --sombra-suave: 0 4px 20px rgba(0,0,0,0.08);
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    }
+    body {
+      background-color: #fff;
+      color: #1e293b;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    /* HEADER */
+    header {
+      background: linear-gradient(135deg, var(--azul-profundo) 0%, #1e3a8a 100%);
+      color: white;
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo-icon {
+      background: var(--dorado-sutil);
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      color: var(--azul-profundo);
+      font-size: 18px;
+    }
+    .logo-text {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+    .logo-text span {
+      color: var(--dorado-sutil);
+    }
+    /* HERO */
+    .hero {
+      background: linear-gradient(rgba(11, 36, 71, 0.92), rgba(11, 36, 71, 0.95)), url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect width="100" height="100" fill="%230b2447"/><path d="M0 50 L100 50 M50 0 L50 100" stroke="%23d4af37" stroke-width="0.5" opacity="0.1"/></svg>');
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0 60px;
+      text-align: center;
+    }
+    .hero h1 {
+      font-size: 38px;
+      font-weight: 800;
+      margin-bottom: 20px;
+      line-height: 1.3;
+    }
+    .hero p {
+      font-size: 20px;
+      max-width: 700px;
+      margin: 0 auto 35px;
+      opacity: 0.92;
+    }
+    .highlight {
+      color: var(--dorado-sutil);
+      font-weight: 700;
+    }
+    /* SECCIONES */
+    section {
+      padding: 70px 0;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 20px;
+    }
+    .section-subtitle {
+      text-align: center;
+      color: var(--gris-medio);
+      max-width: 700px;
+      margin: 0 auto 50px;
+      font-size: 18px;
+    }
+    /* SERVICIOS */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    .service-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: var(--sombra-suave);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .service-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+    }
+    .service-header {
+      background: var(--azul-profundo);
+      color: white;
+      padding: 25px;
+      text-align: center;
+    }
+    .service-header h3 {
+      font-size: 24px;
+      font-weight: 800;
+      margin-bottom: 8px;
+    }
+    .service-header .subtitle {
+      color: var(--dorado-sutil);
+      font-weight: 600;
+      font-size: 16px;
+    }
+    .service-body {
+      padding: 30px;
+    }
+    .service-body ul {
+      list-style: none;
+      margin-top: 15px;
+    }
+    .service-body ul li {
+      padding-left: 28px;
+      position: relative;
+      margin-bottom: 15px;
+      font-size: 16px;
+    }
+    .service-body ul li:before {
+      content: "•";
+      color: var(--dorado-sutil);
+      font-size: 24px;
+      position: absolute;
+      left: 0;
+      top: -3px;
+    }
+    .btn {
+      display: inline-block;
+      background: var(--azul-profundo);
+      color: white;
+      padding: 14px 32px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 17px;
+      transition: all 0.3s ease;
+      border: 2px solid var(--azul-profundo);
+      cursor: pointer;
+      text-align: center;
+      width: 100%;
+    }
+    .btn:hover {
+      background: white;
+      color: var(--azul-profundo);
+      transform: scale(1.03);
+    }
+    .btn-whatsapp {
+      background: #25D366;
+      border-color: #25D366;
+    }
+    .btn-whatsapp:hover {
+      background: white;
+      color: #25D366;
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--azul-profundo);
+      border: 2px solid var(--azul-profundo);
+    }
+    .btn-outline:hover {
+      background: var(--azul-profundo);
+      color: white;
+    }
+    /* METODOLOGÍA */
+    .methodology {
+      background-color: var(--gris-claro);
+    }
+    .methodology-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+    .method-item {
+      background: white;
+      padding: 30px 25px;
+      border-radius: 16px;
+      text-align: center;
+      box-shadow: var(--sombra-suave);
+    }
+    .method-icon {
+      width: 70px;
+      height: 70px;
+      background: rgba(11, 36, 71, 0.08);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      font-size: 28px;
+      color: var(--azul-profundo);
+      font-weight: 800;
+    }
+    .method-item h4 {
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--azul-profundo);
+      margin-bottom: 12px;
+    }
+    /* FORMULARIO */
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      background: white;
+      padding: 40px;
+      border-radius: 20px;
+      box-shadow: var(--sombra-suave);
+    }
+    .form-group {
+      margin-bottom: 25px;
+    }
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+      color: var(--azul-profundo);
+    }
+    .form-control {
+      width: 100%;
+      padding: 14px;
+      border: 2px solid #cbd5e1;
+      border-radius: 12px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: var(--azul-profundo);
+    }
+    textarea.form-control {
+      min-height: 150px;
+      resize: vertical;
+    }
+    .radio-group {
+      display: flex;
+      gap: 25px;
+      margin-top: 10px;
+    }
+    .radio-option {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .radio-option input {
+      width: 18px;
+      height: 18px;
+    }
+    .disclaimer {
+      font-size: 14px;
+      color: var(--gris-medio);
+      margin-top: 15px;
+      line-height: 1.5;
+    }
+    .form-footer {
+      text-align: center;
+      margin-top: 20px;
+      padding-top: 20px;
+      border-top: 1px solid #e2e8f0;
+    }
+    /* FOOTER */
+    footer {
+      background: var(--azul-profundo);
+      color: white;
+      padding: 50px 0 30px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      margin-top: 30px;
+    }
+    .footer-col h4 {
+      font-size: 20px;
+      margin-bottom: 25px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    .footer-col h4:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 3px;
+      background: var(--dorado-sutil);
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 15px;
+    }
+    .footer-col ul li a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: color 0.3s;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .footer-col ul li a:hover {
+      color: var(--dorado-sutil);
+    }
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      margin-top: 30px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+    }
+    .whatsapp-badge {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
+      color: white;
+      width: 65px;
+      height: 65px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 28px;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.4);
+      text-decoration: none;
+      z-index: 2000;
+      transition: transform 0.3s;
+    }
+    .whatsapp-badge:hover {
+      transform: scale(1.1);
+    }
+    /* RESPONSIVE */
+    @media (max-width: 768px) {
+      .header-content {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .hero h1 {
+        font-size: 30px;
+      }
+      .hero p {
+        font-size: 18px;
+      }
+      .section-title {
+        font-size: 28px;
+      }
+      .contact-form {
+        padding: 30px 20px;
+      }
+      .radio-group {
+        flex-direction: column;
+        gap: 12px;
+      }
+      .btn {
+        padding: 14px;
+        font-size: 16px;
+      }
+    }
+    @media (max-width: 480px) {
+      .hero {
+        padding: 60px 0 40px;
+      }
+      .section-title {
+        font-size: 26px;
+      }
+      .section-subtitle {
+        font-size: 16px;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .whatsapp-badge {
+        width: 60px;
+        height: 60px;
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- WHATSAPP FLOTANTE -->
+  <a href="https://wa.me/525631037575?text=Hola,%20me%20interesa%20conocer%20m%C3%A1s%20sobre%20los%20servicios%20de%20PSiCO-IUS" 
+     class="whatsapp-badge" 
+     target="_blank"
+     aria-label="Contactar por WhatsApp">
+    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M17.472 14.382C17.162 14.225 16.842 14.116 16.514 14.056C15.57 13.883 14.902 13.45 14.474 12.81C14.046 12.17 13.858 11.323 13.91 10.268C13.938 9.716 14.028 8.913 14.499 8.19C14.71 7.865 14.945 7.59 15.199 7.366C15.452 7.142 15.538 7.054 15.676 6.918C15.814 6.783 15.902 6.695 15.948 6.607C15.994 6.519 16.016 6.453 16.016 6.365C16.016 6.277 15.972 6.146 15.884 6.058C15.796 5.97 15.4 5.838 14.85 5.641C14.212 5.412 13.508 5.183 12.738 5.042C11.21 4.758 9.616 4.987 8.264 5.729C6.604 6.646 5.38 8.033 4.91 9.583C4.44 11.133 4.768 12.694 5.806 13.827C6.96 15.091 8.378 15.904 9.868 16.288C10.398 16.42 11.456 16.661 12.492 17.278C12.976 17.562 13.372 17.802 13.636 17.956C13.9 18.111 14.032 18.177 14.142 18.331C14.252 18.486 14.318 18.618 14.406 18.706C14.494 18.794 14.582 18.904 14.692 19.014C14.802 19.124 14.934 19.256 15.022 19.344C15.198 19.52 15.594 20.002 15.792 20.243C15.99 20.484 16.1 20.638 16.166 20.748C16.232 20.858 16.276 20.968 16.298 21.078C16.32 21.188 16.342 21.364 16.298 21.518C16.254 21.673 16.144 21.827 16.012 21.937C15.88 22.047 15.154 22.463 14.384 22.682C13.35 22.978 12.206 23.044 11.018 22.88C9.146 22.616 7.406 21.906 5.952 20.794C4.498 19.682 3.44 18.256 2.932 16.692C2.424 15.128 2.48 13.514 3.088 12.07C3.696 10.626 4.834 9.44 6.37 8.644C7.666 7.98 9.072 7.557 10.456 7.398C10.806 7.354 11.4 7.31 11.84 7.288C12.28 7.266 12.456 7.222 12.61 7.002C12.764 6.782 12.72 6.454 12.676 6.322C12.632 6.19 12.478 6.036 12.28 5.97C12.082 5.904 11.456 5.728 10.72 5.53C9.382 5.158 8.11 4.942 6.926 4.942C4.722 4.942 2.672 5.755 1.218 7.207C-0.236 8.659 -0.886 10.617 -0.666 12.513C-0.446 14.409 0.59 16.177 2.358 17.465C3.686 18.423 5.19 19.14 6.76 19.616C8.088 20.004 9.46 20.216 10.81 20.26C11.754 20.282 12.37 20.216 12.832 20.15C13.294 20.084 13.91 19.93 14.15 19.864C14.39 19.798 14.63 19.754 14.74 19.732C14.85 19.71 14.982 19.754 15.048 19.798C15.114 19.842 15.334 19.996 15.488 20.106C15.686 20.26 17.004 21.23 17.354 21.318C17.704 21.406 17.968 21.428 18.166 21.384C18.364 21.34 19.242 21.01 19.614 20.834C20.866 20.243 21.832 19.322 22.402 18.158C23.148 16.642 23.346 14.972 22.974 13.39C22.602 11.808 21.682 10.422 20.368 9.474C19.818 9.078 19.18 8.748 18.5 8.506L17.472 14.382Z" fill="white"/>
+    </svg>
+  </a>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container header-content">
+      <div class="logo">
+        <div class="logo-icon">Ψ</div>
+        <div class="logo-text">PSiCO-<span>IUS</span></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="container">
+      <h1>Donde la observación sistemática encuentra la acción ética</h1>
+      <p>Laboratorio mexicano de investigación de juicios orales. Fortalecemos la resiliencia procesal y construimos lenguaje psicojurídico operativo para profesionales comprometidos con una justicia rigurosa.</p>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section>
+    <div class="container">
+      <h2 class="section-title">Nuestros Servicios</h2>
+      <p class="section-subtitle">Enfoque educativo basado en evidencia. Sin promesas irreales. Solo herramientas científicas para contextos legales complejos.</p>
+      
+      <div class="services-grid">
+        <!-- ASESORÍA -->
+        <div class="service-card">
+          <div class="service-header">
+            <h3>Asesoría Psicojurídica Integrada</h3>
+            <div class="subtitle">Para víctimas y profesionales</div>
+          </div>
+          <div class="service-body">
+            <p>Fortalecimiento neurocognitivo antes, durante y después de audiencias para reducir el agotamiento procesal y completar tu caso con dignidad.</p>
+            <ul>
+              <li>Preparación testimonial estable sin revictimización</li>
+              <li>Optimización del procesamiento emocional de memorias adversas</li>
+              <li>Acompañamiento en audiencias clave</li>
+              <li>Plan de autocuidado procesal personalizado</li>
+            </ul>
+            <a href="#contacto" class="btn btn-outline" style="margin-top: 25px;">Explorar opciones</a>
+          </div>
+        </div>
+        
+        <!-- CURSOS -->
+        <div class="service-card">
+          <div class="service-header">
+            <h3>Formación Profesional</h3>
+            <div class="subtitle">Programa mensual de sábados</div>
+          </div>
+          <div class="service-body">
+            <p>Laboratorio de investigación de juicios orales. Aprende a observar sistemáticamente el comportamiento de actores jurídicos con protocolos replicables.</p>
+            <ul>
+              <li>Lenguaje psicojurídico operativo (diccionario digital incluido)</li>
+              <li>Imputabilidad simbólica y FAAA aplicado</li>
+              <li>Ética como estrategia litigable (teoría de juegos)</li>
+              <li>Análisis de puntos débiles en audiencias reales</li>
+            </ul>
+            <a href="#contacto" class="btn" style="margin-top: 25px;">Solicitar programa completo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- METODOLOGÍA -->
+  <section class="methodology">
+    <div class="container">
+      <h2 class="section-title">Nuestro Enfoque</h2>
+      <p class="section-subtitle">Basado en investigación doctoral y práctica forense real. Sin especulación metafísica. Solo procesamiento observable y conductas medibles.</p>
+      
+      <div class="methodology-grid">
+        <div class="method-item">
+          <div class="method-icon">1</div>
+          <h4>Lenguaje Operativo</h4>
+          <p>Definiciones claras que eliminan ambigüedad entre psicología y derecho. Sin "mente". Solo procesamiento neurocognitivo observable.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-icon">2</div>
+          <h4>Observación Sistemática</h4>
+          <p>Protocolos replicables para analizar comportamiento de actores jurídicos en juicios orales. No intuición. Métrica forense.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-icon">3</div>
+          <h4>Resiliencia Procesal</h4>
+          <p>Fortalecimiento neurocognitivo para víctimas. Reducción del agotamiento que causa deserción del 68% de casos.</p>
+        </div>
+        <div class="method-item">
+          <div class="method-icon">4</div>
+          <h4>Ética Estratégica</h4>
+          <p>Convertir irregularidades en consecuencias probatorias mediante teoría de juegos. Sin ataques personales.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FORMULARIO -->
+  <section id="contacto" style="background: linear-gradient(135deg, #0f172a 0%, var(--azul-profundo) 100%); color: white;">
+    <div class="container">
+      <h2 class="section-title" style="color: white;">Inicia una Conversación Exploratoria</h2>
+      <p class="section-subtitle" style="color: rgba(255,255,255,0.85); max-width: 800px;">
+        Sin compromiso comercial. Solo información basada en evidencia para evaluar si nuestros servicios se alinean con tus necesidades profesionales o personales.
+      </p>
+      
+      <form action="https://formspree.io/f/mqkjnwvj" method="POST" class="contact-form">
+        <input type="hidden" name="_subject" value="Solicitud PSiCO-IUS - Contacto">
+        <input type="hidden" name="_next" value="https://tudominio.com/gracias.html">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" class="form-control" required placeholder="Ej. María López García">
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Correo electrónico</label>
+          <input type="email" id="email" name="email" class="form-control" required placeholder="tuemail@dominio.com">
+        </div>
+        
+        <div class="form-group">
+          <label for="telefono">WhatsApp (opcional pero recomendado)</label>
+          <input type="tel" id="telefono" name="telefono" class="form-control" placeholder="55 1234 5678">
+        </div>
+        
+        <div class="form-group">
+          <label>¿En qué te podemos apoyar?</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="asesoria" name="servicio" value="Asesoría psicojurídica" required>
+              <label for="asesoria">Asesoría para caso personal/profesional</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="curso" name="servicio" value="Formación profesional">
+              <label for="curso">Información sobre cursos mensuales</label>
+            </div>
+          </div>
+        </div>
+        
+        <div class="form-group">
+          <label for="mensaje">Contexto breve (opcional)</label>
+          <textarea id="mensaje" name="mensaje" class="form-control" placeholder="Ej. 'Soy abogado y mi cliente muestra signos de agotamiento procesal...' o 'Busco formación en análisis de juicios orales...'"></textarea>
+        </div>
+        
+        <p class="disclaimer">
+          <strong>Confidencialidad:</strong> Tu información se maneja con estricta confidencialidad según estándares APA y LGPD. No compartimos datos con terceros. 
+          <br><br>
+          <strong>Nota ética:</strong> No prometemos resultados garantizados. Ofrecemos herramientas basadas en evidencia para fortalecer tu proceso o práctica profesional.
+        </p>
+        
+        <div class="form-footer">
+          <button type="submit" class="btn" style="background: var(--dorado-sutil); color: var(--azul-profundo); border-color: var(--dorado-sutil);">
+            Enviar solicitud exploratoria
+          </button>
+          <p style="margin-top: 15px; font-size: 15px; color: rgba(255,255,255,0.8);">
+            También puedes contactarnos directamente:<br>
+            📧 moguelcnsef@gmail.com<br>
+            📱 WhatsApp 56 31 03 75 75
+          </p>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <div class="logo" style="justify-content: center; margin-bottom: 30px;">
+        <div class="logo-icon">Ψ</div>
+        <div class="logo-text">PSiCO-<span>IUS</span></div>
+      </div>
+      
+      <div class="footer-grid">
+        <div class="footer-col">
+          <h4>PSiCO-IUS</h4>
+          <ul>
+            <li><a href="#servicios"><span>•</span> Asesoría psicojurídica</a></li>
+            <li><a href="#servicios"><span>•</span> Formación profesional</a></li>
+            <li><a href="#"><span>•</span> Laboratorio de juicios orales</a></li>
+            <li><a href="#"><span>•</span> Diccionario psicojurídico</a></li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Contacto</h4>
+          <ul>
+            <li><a href="mailto:moguelcnsef@gmail.com"><span>✉️</span> moguelcnsef@gmail.com</a></li>
+            <li><a href="https://wa.me/525631037575" target="_blank"><span>📱</span> WhatsApp 56 31 03 75 75</a></li>
+            <li><span>👨‍💼</span> Psic. Joel Moguel Mondragón</li>
+            <li><span>⚖️</span> Dr. Víctor Moreno Sánchez</li>
+          </ul>
+        </div>
+        
+        <div class="footer-col">
+          <h4>Ética Profesional</h4>
+          <ul>
+            <li><span>✓</span> Sin diagnósticos a distancia</li>
+            <li><span>✓</span> Sin promesas de resultados</li>
+            <li><span>✓</span> Confidencialidad garantizada</li>
+            <li><span>✓</span> Enfoque educativo no comercial</li>
+          </ul>
+        </div>
+      </div>
+      
+      <div class="footer-bottom">
+        <p>PSiCO-IUS © 2026 — Laboratorio de investigación de juicios orales. Todos los derechos reservados.</p>
+        <p style="margin-top: 8px; font-size: 14px; opacity: 0.8;">
+          Esta página utiliza Formspree para notificaciones por email. Los pagos se gestionan mediante conversación directa por WhatsApp para garantizar seguridad y personalización.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Smooth scroll para enlaces internos
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          window.scrollTo({
+            top: target.offsetTop - 80,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+
+    // Formulario: mensaje de éxito simulado (Formspree redirige)
+    document.querySelector('form').addEventListener('submit', function(e) {
+      const btn = this.querySelector('button[type="submit"]');
+      const originalText = btn.innerHTML;
+      
+      btn.innerHTML = 'Enviando...';
+      btn.disabled = true;
+      
+      // Restaurar después de 2 segundos (Formspree maneja el envío real)
+      setTimeout(() => {
+        btn.innerHTML = originalText;
+        btn.disabled = false;
+      }, 2000);
+    });
+
+    // WhatsApp tracking (opcional para analytics)
+    document.querySelector('.whatsapp-badge').addEventListener('click', function() {
+      if (typeof gtag === 'function') {
+        gtag('event', 'click_whatsapp', {
+          'event_category': 'contacto',
+          'event_label': 'badge_flotante'
+        });
+      }
+    });
+  </script>
+</body>
+</html>
